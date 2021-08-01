@@ -2,7 +2,12 @@ package tests.gmail;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -13,9 +18,10 @@ import utils.base.CapabilityFactory;
 import utils.base.PageObjectHelper;
 import utils.common.Constants;
 
+
 public class TestBase {
-	ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
-	CapabilityFactory capabilityFactory = new CapabilityFactory();
+	ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	//CapabilityFactory capabilityFactory = new CapabilityFactory();
 	
 	@BeforeMethod
 	@Parameters(value={"browser"})
@@ -23,17 +29,17 @@ public class TestBase {
 //		System.setProperty("webdriver.chrome.driver",
 //				Util.getProjectPath() + "\\src\\test\\resources\\org\\grid\\common\\drivers\\chromedriver.exe");
 //		String hubURL ="http://localhost:4444/wd/hub"; 
-//		DesiredCapabilities capabilites = new DesiredCapabilities(); 
-//		capabilites.setBrowserName("chrome");
-//		capabilites.setPlatform(Platform.WIN10);
-//		ChromeOptions options = new ChromeOptions(); 
-//		options.setAcceptInsecureCerts(true); 
-//		options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
-//		options.merge(capabilites); 
+		DesiredCapabilities capabilites = new DesiredCapabilities(); 
+		capabilites.setBrowserName("chrome");
+		ChromeOptions options = new ChromeOptions(); 
+		options.addArguments("--start-maximized");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--disable-popup-blocking");
+        capabilites.setCapability(ChromeOptions.CAPABILITY, options);
 ////		RemoteWebDriver drivers = new RemoteWebDriver(new URL(hubURL), options);
 //        //Set Browser to ThreadLocalMap
 //		driver.set(new RemoteWebDriver(new URL(hubURL), options));
-		driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilityFactory.getCapabilities(browser)));
+		driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilites));
 		Constants.WEBDRIVER = getDriver();
         PageObjectHelper.loadPageObject(this);
     }
