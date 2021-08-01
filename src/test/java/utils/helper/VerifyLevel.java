@@ -38,6 +38,7 @@ public class VerifyLevel extends Level {
 		if (sArg == null) {
 			return defaultLevel;
 		} else {
+			
 			String s = sArg.toUpperCase();
 			switch (s) {
 			case "ALL":
