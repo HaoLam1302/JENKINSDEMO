@@ -3,7 +3,6 @@ package tests.gmail;
 import static org.testng.Assert.assertTrue;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -53,7 +52,7 @@ public class Testsuite_Demo extends TestBase {
 	
 	@Test(description = "TC03")
 	public void TC033() {
-		ArrayList<String> list = new ArrayList<>();
+		ArrayList<String> list = new ArrayList<String>();
 		list.add("a");
 		list.add("b");
 		
