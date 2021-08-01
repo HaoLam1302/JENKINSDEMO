@@ -19,6 +19,7 @@ import utils.helper.Logger;
 public class Common {
 
 	public static WebElement findElement(By locator) {
+		
 		WebDriverWait wait = new WebDriverWait(Constants.WEBDRIVER, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return Constants.WEBDRIVER.findElement(locator);

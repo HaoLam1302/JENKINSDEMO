@@ -9,6 +9,7 @@
 
 
 	<test name="Selenium_GmailTest">
+	<parameter name="browser" value="chrome"/>
 		<classes>
 			<class name="tests.gmail.Testsuite_Demo">
 				<methods>

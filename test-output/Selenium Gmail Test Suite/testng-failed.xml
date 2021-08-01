@@ -5,12 +5,14 @@
     <listener class-name="utils.config.TestListener"/>
   </listeners>
   <test thread-count="1" parallel="methods" name="Selenium_GmailTest(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="tests.gmail.Testsuite_Demo">
         <methods>
-          <include name="beforeMethod"/>
+          <include name="terminate"/>
           <include name="TC01"/>
-          <include name="afterMethod"/>
+          <include name="setup"/>
+          <include name="afterSuite"/>
         </methods>
       </class> <!-- tests.gmail.Testsuite_Demo -->
     </classes>
