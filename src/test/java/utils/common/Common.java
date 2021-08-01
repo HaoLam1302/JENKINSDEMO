@@ -18,19 +18,19 @@ import utils.helper.Logger;
 public class Common {
 
 	public static WebElement findElement(By locator) {
-		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 5);
+		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return Constants.WEBDRIVER.findElement(locator);
 	}
 
 	public static List<WebElement> findElements(By locator) {
-		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 5);
+		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return Constants.WEBDRIVER.findElements(locator);
 	}
 	
 	public static boolean checkElementNotExist(By locator) {
-		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 5);
+		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		int lenght = Constants.WEBDRIVER.findElements(locator).size();
 		if( lenght != 0) {

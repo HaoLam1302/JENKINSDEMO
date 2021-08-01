@@ -4,8 +4,6 @@ package pages.Gmail.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 import pages.Gmail.GeneralPage.GeneralPage;
 import utils.common.Common;
