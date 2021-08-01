@@ -30,8 +30,9 @@ public class JsonHelper {
 			return gson.fromJson(json, mapType);
 		} catch (Exception e) {
 			oLog.error(e.getMessage());
-			throw e;
+			e.printStackTrace();
 		}
+		return null;
 	}
 	
 	public static <T> List<T> getListData(String jsonPath, Type type) {
@@ -44,8 +45,9 @@ public class JsonHelper {
 			return lst;
 		} catch (Exception e) {
 			oLog.error(e.getMessage());
-			throw e;
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 	public static <T> List<T> getListData(String jsonPath, Class<?> clazz) {
@@ -58,8 +60,9 @@ public class JsonHelper {
 			return lst;
 		} catch (Exception e) {
 			oLog.error(e.getMessage());
-			throw e;
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 	public static <T> T getData(String jsonPath, Type type) {
@@ -70,8 +73,9 @@ public class JsonHelper {
 			return gson.fromJson(reader, type);
 		} catch (Exception e) {
 			oLog.error(e.getMessage());
-			throw e;
+			e.printStackTrace();
 		}
+		return null;
 
 	}
 
@@ -83,8 +87,9 @@ public class JsonHelper {
 			return gson.fromJson(reader, clazz);
 		} catch (Exception e) {
 			oLog.error(e.getMessage());
-			throw e;
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 	public static JsonObject getJsonObject(String jsonPath) {
@@ -97,8 +102,9 @@ public class JsonHelper {
 			return obj;
 		} catch (Exception e) {
 			oLog.error(e.getMessage());
-			throw e;
+			e.printStackTrace();
 		}
+		return null;
 	}
 	
 	public static JsonElement getJsonObjectFromString(String jsonString) {
@@ -110,8 +116,9 @@ public class JsonHelper {
 			return obj;
 		} catch (Exception e) {
 			oLog.error(e.getMessage());
-			throw e;
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 	public static DesiredCapabilities convertJsonToCapabilities(String json) {
