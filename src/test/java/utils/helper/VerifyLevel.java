@@ -10,57 +10,42 @@ public class VerifyLevel extends Level {
 	}
 
 	public static Level toLevel(int val, Level defaultLevel) {
-		switch (val) {
-		case -2147483648:
+		if (val == -2147483648) {
 			return ALL;
-		case 5000:
-			return TRACE;
-		case 10000:
+		} else if (val == 10000) {
 			return DEBUG;
-		case 20000:
+		} else if (val == 20000) {
 			return INFO;
-		case 25000:
+		} else if (val == 25000) {
 			return VERIFY;
-		case 30000:
+		}else if(val==30000) {
 			return WARN;
-		case 40000:
+		}else if(val==40000)
+		{
 			return ERROR;
-		case 50000:
-			return FATAL;
-		case 2147483647:
-			return OFF;
-		default:
-			return defaultLevel;
-		}
-	}
+		}else
+		{
+		return defaultLevel;
+	}}
 
 	public static Level toLevel(String sArg, Level defaultLevel) {
 		if (sArg == null) {
 			return defaultLevel;
 		} else {
-			
-			String s = sArg.toUpperCase();
-			switch (s) {
-			case "ALL":
+			if (sArg.toUpperCase().equals("ALL")) {
 				return ALL;
-			case "DEBUG":
+			} else if (sArg.toUpperCase().equals("DEBUG")) {
 				return DEBUG;
-			case "INFO":
+			} else if (sArg.toUpperCase().equals("INFO")) {
 				return INFO;
-			case "VERIFY":
+			} else if (sArg.toUpperCase().equals("VERIFY")) {
 				return VERIFY;
-			case "WARN":
-				return WARN;
-			case "ERROR":
+			} else if (sArg.toUpperCase().equals("ERROR")) {
 				return ERROR;
-			case "FATAL":
-				return FATAL;
-			case "OFF":
-				return OFF;
-			case "TRACE":
-				return TRACE;
-			default:
-				return s.equals("İNFO") ? INFO : defaultLevel;
+			} else if (sArg.toUpperCase().equals("WARN")) {
+				return WARN;
+			} else {
+				return sArg.toUpperCase().equals("INFO") ? INFO : defaultLevel;
 			}
 		}
 	}
