@@ -3,8 +3,6 @@ package tests.gmail;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,7 +17,6 @@ import utils.common.Constants;
 
 public class TestBase {
 	ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-	//CapabilityFactory capabilityFactory = new CapabilityFactory();
 	
 	@BeforeMethod
 	@Parameters(value={"browser"})
