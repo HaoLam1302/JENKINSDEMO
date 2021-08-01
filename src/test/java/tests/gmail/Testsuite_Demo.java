@@ -51,7 +51,8 @@ public class Testsuite_Demo extends TestBase {
 	}
 	
 	@Test(description = "TC03")
-	public void TC033() {
+	public void TC03() {
+		System.out.println("Running TC02");
 		ArrayList<String> list = new ArrayList<String>();
 		list.add("a");
 		list.add("b");
@@ -64,7 +65,6 @@ public class Testsuite_Demo extends TestBase {
 		int[] a = new int[1];
 		a[0] = 1;
 		a[1] =2;
-		System.out.println(a.length);
-				
+		System.out.println(a.length);				
 	}
 }
