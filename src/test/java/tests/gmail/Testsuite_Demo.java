@@ -4,7 +4,6 @@ import static org.testng.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -54,7 +53,7 @@ public class Testsuite_Demo extends TestBase {
 	
 	@Test(description = "TC03")
 	public void TC033() {
-		List<String> list = new ArrayList<>();
+		ArrayList<String> list = new ArrayList<>();
 		list.add("a");
 		list.add("b");
 		
