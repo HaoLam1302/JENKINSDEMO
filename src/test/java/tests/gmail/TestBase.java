@@ -14,8 +14,8 @@ import utils.base.PageObjectHelper;
 import utils.common.Constants;
 
 public class TestBase {
-	protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
-	public CapabilityFactory capabilityFactory = new CapabilityFactory();
+	ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+	CapabilityFactory capabilityFactory = new CapabilityFactory();
 	
 	@BeforeMethod
 	@Parameters(value={"browser"})
