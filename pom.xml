@@ -50,4 +50,13 @@
 		</dependency>
 
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>Demo</id>
+			<properties>
+				<testConfig.xml>./src/test/resources/suites/Run_TestCase.xml</testConfig.xml>
+			</properties>
+		</profile>
+	</profiles>
 </project>
