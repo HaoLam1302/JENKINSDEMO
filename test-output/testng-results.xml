@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-05-13T03:21:55Z" name="Default suite" finished-at="2021-05-13T03:21:55Z" duration-ms="115">
+    <groups>
+    </groups>
+    <test started-at="2021-05-13T03:21:55Z" name="Default test" finished-at="2021-05-13T03:21:55Z" duration-ms="115">
+      <class name="tests.gmail.Testsuite_Demo">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tests.gmail.Testsuite_Demo@265adfad]" started-at="2021-05-13T03:21:53Z" name="beforeSuite" finished-at="2021-05-13T03:21:55Z" duration-ms="2032" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method signature="TC033()[pri:0, instance:tests.gmail.Testsuite_Demo@265adfad]" started-at="2021-05-13T03:21:55Z" name="TC033" description="TC03" finished-at="2021-05-13T03:21:55Z" duration-ms="29" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC033 -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tests.gmail.Testsuite_Demo@265adfad]" started-at="2021-05-13T03:21:55Z" name="afterSuite" finished-at="2021-05-13T03:21:56Z" duration-ms="638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- tests.gmail.Testsuite_Demo -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
