@@ -2,24 +2,16 @@ package tests.gmail;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
+import utils.base.CapabilityFactory;
 import utils.base.PageObjectHelper;
 import utils.common.Constants;
-import utils.common.Util;
 
 public class TestBase {
 	protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
