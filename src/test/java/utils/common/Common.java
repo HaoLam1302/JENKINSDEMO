@@ -3,7 +3,6 @@ package utils.common;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 
@@ -19,20 +18,19 @@ import utils.helper.Logger;
 public class Common {
 
 	public static WebElement findElement(By locator) {
-		
-		WebDriverWait wait = new WebDriverWait(Constants.WEBDRIVER, Duration.ofSeconds(10));
+		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 5);
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return Constants.WEBDRIVER.findElement(locator);
 	}
 
 	public static List<WebElement> findElements(By locator) {
-		WebDriverWait wait = new WebDriverWait(Constants.WEBDRIVER, Duration.ofSeconds(10));
+		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 5);
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		return Constants.WEBDRIVER.findElements(locator);
 	}
 	
 	public static boolean checkElementNotExist(By locator) {
-		WebDriverWait wait = new WebDriverWait(Constants.WEBDRIVER, Duration.ofSeconds(5));
+		WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 5);
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		int lenght = Constants.WEBDRIVER.findElements(locator).size();
 		if( lenght != 0) {
@@ -45,7 +43,8 @@ public class Common {
 	
 	public static File getScreenshot(By by, int staleTimeout) {
 		try {
-			WebDriverWait wait = new WebDriverWait(Constants.WEBDRIVER, Duration.ofSeconds(10));
+//			WebDriverWait wait = new WebDriverWait(Constants.WEBDRIVER, Duration.ofSeconds(10));
+			WebDriverWait wait= new WebDriverWait(Constants.WEBDRIVER, 5);
 			return (wait.until(ExpectedConditions.presenceOfElementLocated(by)).getScreenshotAs(OutputType.FILE));
 		} catch (StaleElementReferenceException e) {
 			Logger.info("Common.getScreenshot getting StaleElementReferenceException: " + by.toString());
