@@ -1,8 +1,13 @@
 package utils.config;
 
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -21,9 +26,10 @@ public class TestListener implements ITestListener {
 	
 	public void onTestFailure(ITestResult result) {
 		ExtendTestManager.getTest().log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
-		String screenshotPath = Util.getScreenShot(Constants.WEBDRIVER, result.getName());
+		//String screenshotPath = captureScreenshot();
 		try {
-			ExtendTestManager.getTest().fail("Test Case Failed Snapshot is below " + ExtendTestManager.getTest().addScreenCaptureFromPath(screenshotPath));
+			Utilities.captureScreenshot();
+			ExtendTestManager.getTest().fail("Test Case Failed Snapshot is below " + ExtendTestManager.getTest().addScreenCaptureFromPath(Utilities.screenshotPath));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
