@@ -2,12 +2,12 @@
 <testng-results ignored="1" total="3" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-10T14:02:21Z" name="Selenium Gmail Test Suite" finished-at="2021-10-10T14:02:23Z" duration-ms="1778">
+  <suite started-at="2021-10-10T14:08:56Z" name="Selenium Gmail Test Suite" finished-at="2021-10-10T14:08:58Z" duration-ms="1714">
     <groups>
     </groups>
-    <test started-at="2021-10-10T14:02:21Z" name="Selenium_GmailTest" finished-at="2021-10-10T14:02:23Z" duration-ms="1778">
+    <test started-at="2021-10-10T14:08:56Z" name="Selenium_GmailTest" finished-at="2021-10-10T14:08:58Z" duration-ms="1714">
       <class name="tests.gmail.Testsuite_Demo">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:20Z" name="setup" finished-at="2021-10-10T14:02:21Z" duration-ms="1376" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:55Z" name="setup" finished-at="2021-10-10T14:08:56Z" duration-ms="1468" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,18 +18,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="startLog(org.testng.ITestResult)[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:21Z" name="startLog" finished-at="2021-10-10T14:02:21Z" duration-ms="63" status="PASS">
+        <test-method is-config="true" signature="startLog(org.testng.ITestResult)[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:56Z" name="startLog" finished-at="2021-10-10T14:08:56Z" duration-ms="106" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TC01 status=FAILURE method=Testsuite_Demo.TC01()[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072] output={null}]]]>
+                <![CDATA[[TestResult name=TC01 status=FAILURE method=Testsuite_Demo.TC01()[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startLog -->
-        <test-method signature="TC01()[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:21Z" name="TC01" description="TC01" finished-at="2021-10-10T14:02:22Z" duration-ms="1238" status="FAIL">
+        <test-method signature="TC01()[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:56Z" name="TC01" description="TC01" finished-at="2021-10-10T14:08:58Z" duration-ms="1200" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Password text box is not display expected [true] but found [false]]]>
@@ -59,33 +59,33 @@ at java.base/java.lang.Thread.run(Thread.java:832)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC01 -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:23Z" name="getResult" finished-at="2021-10-10T14:02:23Z" duration-ms="40" status="PASS">
+        <test-method is-config="true" signature="getResult()[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:58Z" name="getResult" finished-at="2021-10-10T14:08:58Z" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="startLog(org.testng.ITestResult)[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:23Z" name="startLog" finished-at="2021-10-10T14:02:23Z" duration-ms="0" status="PASS">
+        <test-method signature="TC02()[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:58Z" name="TC02" description="TC02" finished-at="2021-10-10T14:08:58Z" duration-ms="28" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02 -->
+        <test-method is-config="true" signature="startLog(org.testng.ITestResult)[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:58Z" name="startLog" finished-at="2021-10-10T14:08:58Z" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TC02 status=SUCCESS method=Testsuite_Demo.TC02()[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072] output={null}]]]>
+                <![CDATA[[TestResult name=TC02 status=SUCCESS method=Testsuite_Demo.TC02()[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startLog -->
-        <test-method signature="TC02()[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:23Z" name="TC02" description="TC02" finished-at="2021-10-10T14:02:23Z" duration-ms="29" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC02 -->
-        <test-method is-config="true" signature="getResult()[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:23Z" name="getResult" finished-at="2021-10-10T14:02:23Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="terminate()[pri:0, instance:tests.gmail.Testsuite_Demo@54d18072]" started-at="2021-10-10T14:02:23Z" name="terminate" finished-at="2021-10-10T14:02:23Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="terminate()[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:58Z" name="terminate" finished-at="2021-10-10T14:08:58Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminate -->
+        <test-method is-config="true" signature="getResult()[pri:0, instance:tests.gmail.Testsuite_Demo@7674b62c]" started-at="2021-10-10T14:08:58Z" name="getResult" finished-at="2021-10-10T14:08:58Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
       </class> <!-- tests.gmail.Testsuite_Demo -->
     </test> <!-- Selenium_GmailTest -->
   </suite> <!-- Selenium Gmail Test Suite -->
