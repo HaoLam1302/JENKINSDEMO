@@ -23,7 +23,7 @@ public class TestListener implements ITestListener {
 		ExtendTestManager.getTest().log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
 		String screenshotPath = Util.getScreenShot(Constants.WEBDRIVER, result.getName());
 		try {
-			ExtendTestManager.getTest().fail("Test Case Failed Snapshot is below " + ExtendTestManager.getTest().addScreenCaptureFromPath(System.getProperty("user.dir") + "/ExtendReport/ExtentReport.0/"+ screenshotPath));
+			ExtendTestManager.getTest().fail("Test Case Failed Snapshot is below " + ExtendTestManager.getTest().addScreenCaptureFromPath(screenshotPath));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

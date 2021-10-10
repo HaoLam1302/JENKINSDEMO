@@ -116,7 +116,7 @@ public class Util {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		// after execution, you could see a folder "FailedTestsScreenshots" under src folder
-		String destination = System.getProperty("user.dir") + "/ExtendReport/" + screenshotName + dateName;
+		String destination = System.getProperty("user.dir") + "/ExtendReport/ExtendReport.0/" + screenshotName + dateName + ".png";
 		File finalDestination = new File(destination);
 		try {
 			FileUtils.copyFile(source, finalDestination);
@@ -124,6 +124,6 @@ public class Util {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return screenshotName + dateName;
+		return destination;
 	}
 }
