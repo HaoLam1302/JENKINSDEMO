@@ -112,6 +112,7 @@ public class Util {
 	
 	public static String getScreenShot(WebDriver driver, String screenshotName) {
 		String dateName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		dateName = dateName.toString().replace("-", "_");
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		// after execution, you could see a folder "FailedTestsScreenshots" under src folder
