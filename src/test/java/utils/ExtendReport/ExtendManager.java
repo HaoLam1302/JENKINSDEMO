@@ -8,7 +8,7 @@ public class ExtendManager {
 	public static final ExtentReports extentReports = new ExtentReports();
 	
 	 public synchronized static ExtentReports createExtentReports() {
-		 ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/ExtentReport.html");
+		 ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtendReport/ExtentReport.html");
         	// Create an object of Extent Reports
 		//extentReports = new ExtentReports();  
 		extentReports.attachReporter(htmlReporter);
