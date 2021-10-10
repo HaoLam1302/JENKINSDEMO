@@ -1,1 +1,0 @@
-{"uuid":"f56ad4f7-d04f-42af-bb7f-771a1fdd0bd6","name":"Selenium Gmail Test Suite","children":["9aecf736-5a90-4283-a9d6-578de087147e"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1633856825496,"stop":1633856826796}],"afters":[],"links":[],"start":1633856825486,"stop":1633856838585}
