@@ -5,6 +5,7 @@
 	configfailurepolicy="continue">
 	<listeners>
 		<listener class-name="utils.config.TestListener" />
+		
 	</listeners>
 
 
@@ -14,6 +15,7 @@
 			<class name="tests.gmail.Testsuite_Demo">
 				<methods>
 					<include name="TC01"></include>
+					<include name="TC02"></include>
 				</methods>  
 			</class>
 		</classes>

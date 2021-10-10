@@ -2,13 +2,13 @@ package utils.common;
 
 import org.openqa.selenium.WebDriver;
 
+
 import utils.helper.PropertiesHelper;
 
 public class Constants {
 	public static WebDriver WEBDRIVER;
 	
 	public static final String URL = PropertiesHelper.getPropValue("url");
-	
 	public static final String USERNAME = PropertiesHelper.getPropValue("user.username");
 	public static final String PASSWORD = PropertiesHelper.getPropValue("user.password");
 	

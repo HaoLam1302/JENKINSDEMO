@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.beust.jcommander.Parameter;
+
 import dataObjects.Account;
 import pages.Gmail.GeneralPage.GeneralPage;
 import pages.Gmail.LoginPage.LoginPage;
@@ -32,7 +34,7 @@ public class Testsuite_Demo extends TestBase {
 //		Logger.verify("Text box username is displayed");
 //		assertTrue(loginPage.doesUserNameTextBoxDisplay(),"Textbox username is not displayed");
 
-		Logger.verify("Text box password is displayed");
+		Logger.verify("Verify: text box password is displayed");
 		assertTrue(loginPage.doesPasswordTextBoxDisplay(), "Password text box is not display");
 
 		Logger.info("Step 2: Enter username");

@@ -7,18 +7,30 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import utils.ExtendReport.ExtendTestManager;
 import utils.base.PageObjectHelper;
 import utils.common.Constants;
 
 
 public class TestBase {
 	ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	public ExtentHtmlReporter htmlReporter;
+	public ExtentReports extent;
+	public ExtentTest logger;
 	
-	@BeforeMethod
+	@BeforeSuite
 	@Parameters(value={"browser"})
 	public void setup (String browser) throws MalformedURLException {
 //		System.setProperty("webdriver.chrome.driver",
@@ -35,7 +47,7 @@ public class TestBase {
 //        //Set Browser to ThreadLocalMap
 //		driver.set(new RemoteWebDriver(new URL(hubURL), options));
 		driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilites));
-		Constants.WEBDRIVER = getDriver();
+		Constants.WEBDRIVER = driver.get();
         PageObjectHelper.loadPageObject(this);
     }
 //	@BeforeSuite
@@ -54,38 +66,22 @@ public class TestBase {
 	        return driver.get();
 	    }
 	 
-	@AfterMethod
-	public void afterSuite() {
-//		System.out.println("Post-condition");
-//		// Here will compare if test is failing then only it will enter into if condition
-//		if(ITestResult.FAILURE==result.getStatus()){
-//			try {
-//				// Create refernce of TakesScreenshot
-//				TakesScreenshot ts=(TakesScreenshot)Constants.WEBDRIVER;
-//				
-//				// Call method to capture screenshot
-//				File source=ts.getScreenshotAs(OutputType.FILE);
-//		 
-//				// Copy method  specific location here it will save all screenshot in our project home directory and
-//				// result.getName() will return name of test case so that screenshot name will be same
-//				try{
-//					FileHandler.copy(source, new File(Util.getProjectPath() +"/src/test/resources/screenshots/"+result.getName()+".png"));
-//					System.out.println("Screenshot taken");
-//				}
-//		
-//				catch (Exception e){
-//					System.out.println("Exception while taking screenshot "+e.getMessage());
-//				} 
-//			}catch (Exception e) {
-//				// TODO: handle exception
-//			}
-//		}
-		// close application
-		getDriver().quit();
-	}
 	
 	@AfterClass void terminate () {
         //Remove the ThreadLocalMap element
         driver.remove();
     }
+	
+	
+	@BeforeMethod
+	public void startLog(ITestResult result) {
+		ExtendTestManager.startTest(result.getMethod().getMethodName(),"");
+	}
+	
+	@AfterMethod
+	public void getResult() {
+		Constants.WEBDRIVER.quit();
+	}
+	
+
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite configfailurepolicy="continue" thread-count="1" parallel="methods" data-provider-thread-count="1" name="Failed suite [Selenium Gmail Test Suite]" guice-stage="DEVELOPMENT">
+<suite configfailurepolicy="continue" thread-count="1" parallel="methods" name="Failed suite [Selenium Gmail Test Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="utils.config.TestListener"/>
   </listeners>
@@ -9,10 +9,11 @@
     <classes>
       <class name="tests.gmail.Testsuite_Demo">
         <methods>
+          <include name="getResult"/>
+          <include name="startLog"/>
           <include name="terminate"/>
           <include name="TC01"/>
           <include name="setup"/>
-          <include name="afterSuite"/>
         </methods>
       </class> <!-- tests.gmail.Testsuite_Demo -->
     </classes>

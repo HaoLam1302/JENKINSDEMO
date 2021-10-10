@@ -5,11 +5,12 @@
     <classes>
       <class name="tests.gmail.Testsuite_Demo">
         <methods>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
-          <include name="beforeClass"/>
+          <include name="getResult"/>
+          <include name="endReport"/>
+          <include name="startReport"/>
+          <include name="terminate"/>
           <include name="TC01"/>
-          <include name="afterSuite"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- tests.gmail.Testsuite_Demo -->
     </classes>
