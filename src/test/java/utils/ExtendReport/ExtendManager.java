@@ -9,6 +9,7 @@ public class ExtendManager {
 	
 	 public synchronized static ExtentReports createExtentReports() {
 		 ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtendReport/ExtentReport.html");
+		 htmlReporter.config().setAutoCreateRelativePathMedia(true);
         	// Create an object of Extent Reports
 		//extentReports = new ExtentReports();  
 		extentReports.attachReporter(htmlReporter);
