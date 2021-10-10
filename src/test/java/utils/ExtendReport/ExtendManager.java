@@ -6,8 +6,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtendManager {
 	public static final ExtentReports extentReports = new ExtentReports();
-	
-	 public synchronized static ExtentReports createExtentReports() {
+	public synchronized static ExtentReports createExtentReports() {
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtendReport/ExtentReport.html");
 		htmlReporter.config().setAutoCreateRelativePathMedia(true);
         	// Create an object of Extent Reports
