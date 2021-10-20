@@ -14,11 +14,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
 import utils.ExtendReport.ExtendTestManager;
 import utils.base.PageObjectHelper;
 import utils.common.Constants;
@@ -26,10 +21,6 @@ import utils.common.Constants;
 
 public class TestBase {
 	ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-	public ExtentHtmlReporter htmlReporter;
-	public ExtentReports extent;
-	public ExtentTest logger;
-	
 	@BeforeSuite
 	@Parameters(value={"browser"})
 	public void setup (String browser) throws MalformedURLException {
@@ -37,7 +28,7 @@ public class TestBase {
 //				Util.getProjectPath() + "\\src\\test\\resources\\org\\grid\\common\\drivers\\chromedriver.exe");
 //		String hubURL ="http://localhost:4444/wd/hub"; 
 		DesiredCapabilities capabilites = new DesiredCapabilities(); 
-		capabilites.setBrowserName("chrome");
+		capabilites.setBrowserName(browser);
 		ChromeOptions options = new ChromeOptions(); 
 		options.addArguments("--start-maximized");
         options.addArguments("--ignore-certificate-errors");
@@ -74,8 +65,8 @@ public class TestBase {
 	
 	
 	@BeforeMethod
-	public void startLog(ITestResult result) {
-		ExtendTestManager.startTest(result.getMethod().getMethodName(),"");
+	public void startLog() {
+		ExtendTestManager.startTest("Test","");
 	}
 	
 	@AfterMethod

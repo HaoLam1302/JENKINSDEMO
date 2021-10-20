@@ -1,7 +1,5 @@
 package utils.helper;
 
-
-import org.testng.ITestResult;
 import utils.ExtendReport.ExtendTestManager;
 
 
@@ -24,6 +22,7 @@ public class Logger {
 	public static void verify(String message) {
 		System.out.println(message);
 		log.verify(message);
+		ExtendTestManager.getTest().info(message);
 		
 	}
 

@@ -18,25 +18,29 @@ import utils.common.Util;
 import utils.helper.Logger;
 
 public class TestListener implements ITestListener {
-	
+	private static String getTestMethodName(ITestResult iTestResult) {
+	        return iTestResult.getMethod().getConstructorOrMethod().getName();
+	}
+	  
 	public void onTestFailure(ITestResult result) {
-		ExtendTestManager.getTest().log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
+		//ExtendTestManager.getTest().log(Status.FAIL, "Test Case Failed");
 		String screenshotPath = Util.getScreenShot(Constants.WEBDRIVER, result.getName());
 		try {
-			ExtendTestManager.getTest().fail("Test Case Failed Snapshot is below " + ExtendTestManager.getTest().addScreenCaptureFromPath(screenshotPath));
+			ExtendTestManager.getTest().fail(MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
+			ExtendTestManager.getTest().addScreenCaptureFromPath(screenshotPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			ExtendTestManager.getTest().fail(e.getLocalizedMessage());
 		}
 	}
 	
 	public void onTestStart(ITestResult result) {
-		Logger.info("Starting test case: "+ result.getMethod().getMethodName());
+		Logger.info("Starting test case: " + result.getMethod().getMethodName());
 	}
 	
 	public void onTestSuccess(ITestResult result) {
-		ExtendTestManager.getTest().log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
+		Logger.info(getTestMethodName(result) + " test is succeed.");
+		ExtendTestManager.getTest().log(Status.PASS, " Test pass.");
 	}
 
 	public void onTestSkipped(ITestResult result) {
@@ -48,7 +52,7 @@ public class TestListener implements ITestListener {
 	}
 
 	public void onStart(ITestContext context) {
-		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		//System.setProperty("org.uncommons.reportng.escape-output", "false");
 	}
 
 	public void onFinish(ITestContext context) {

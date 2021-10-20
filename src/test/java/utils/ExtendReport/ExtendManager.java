@@ -2,7 +2,6 @@ package utils.ExtendReport;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtendManager {
 	public static final ExtentReports extentReports = new ExtentReports();
@@ -19,7 +18,7 @@ public class ExtendManager {
                 // Name of the report
 		htmlReporter.config().setReportName("JACKSON REPORT"); 
                 // Dark Theme
-		htmlReporter.config().setTheme(Theme.STANDARD);		
+		//htmlReporter.config().setTheme(Theme.STANDARD);		
 		return extentReports;
 	}
 }

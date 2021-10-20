@@ -1,5 +1,6 @@
 package utils.config;
 
+
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
@@ -38,7 +39,6 @@ public class Retry implements IRetryAnalyzer {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			ExtendTestManager.getTest().fail(e.getLocalizedMessage());
 		}
 	}
 }

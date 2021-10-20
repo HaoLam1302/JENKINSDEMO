@@ -1,15 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 7.057 sec <<< FAILURE!
-TC01(tests.gmail.Testsuite_Demo)  Time elapsed: 1.373 sec  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.669 sec <<< FAILURE! - in TestSuite
+TC01(tests.gmail.Testsuite_Demo)  Time elapsed: 3.911 sec  <<< FAILURE!
 java.lang.AssertionError: Password text box is not display expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertTrue(Assert.java:44)
 	at tests.gmail.Testsuite_Demo.TC01(Testsuite_Demo.java:36)
-
-TC03(tests.gmail.Testsuite_Demo)  Time elapsed: 0.12 sec  <<< FAILURE!
-java.lang.ArrayIndexOutOfBoundsException: 1
-	at tests.gmail.Testsuite_Demo.TC03(Testsuite_Demo.java:67)
 
