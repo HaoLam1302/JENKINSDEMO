@@ -24,10 +24,10 @@ public class TestListener implements ITestListener {
 	  
 	public void onTestFailure(ITestResult result) {
 		//ExtendTestManager.getTest().log(Status.FAIL, "Test Case Failed");
-		String screenshotPath = Util.getScreenShot(Constants.WEBDRIVER, result.getName());
+		String screenshotName = Util.getScreenShot(Constants.WEBDRIVER, result.getName());
 		try {
 			ExtendTestManager.getTest().fail(MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
-			ExtendTestManager.getTest().addScreenCaptureFromPath(screenshotPath);
+			ExtendTestManager.getTest().addScreenCaptureFromPath(screenshotName+".png");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
