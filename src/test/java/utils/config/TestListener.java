@@ -24,8 +24,7 @@ public class TestListener implements ITestListener {
 	  
 	public void onTestFailure(ITestResult result) {
 		//ExtendTestManager.getTest().log(Status.FAIL, "Test Case Failed");
-		String name = result.getName().replace("TC","");
-		String screenshotName = Util.getScreenShot(Constants.WEBDRIVER, name);
+		String screenshotName = Util.getScreenShot(Constants.WEBDRIVER, result.getName());
 		try {
 			ExtendTestManager.getTest().fail(MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
 			ExtendTestManager.getTest().addScreenCaptureFromPath(screenshotName+".png");
