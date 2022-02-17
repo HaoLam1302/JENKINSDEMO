@@ -30,7 +30,12 @@ public class Testsuite_Demo extends TestBase {
 	
 //		Logger.verify("Text box username is displayed");
 //		assertTrue(loginPage.doesUserNameTextBoxDisplay(),"Textbox username is not displayed");
-
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Logger.verify("Verify: text box password is displayed");
 		assertTrue(loginPage.doesPasswordTextBoxDisplay(), "Password text box is not display");
 
